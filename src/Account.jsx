@@ -9,6 +9,7 @@ export default function Account({ session }) {
   const [access_token, setAccessToken] = useState(null);
   const [refresh_token, setRefreshToken] = useState(null);
   const [avatar_url, setAvatarUrl] = useState(null);
+  const [chatflowid, setChatflowid] = useState(null); // New state for Chatflow ID
   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function Account({ session }) {
 
       const { data, error } = await supabase
         .from('profiles')
-        .select(`username, access_token, refresh_token, avatar_url`)
+        .select(`username, access_token, refresh_token, avatar_url, chatflowid`) // Include chatflowid
         .eq('id', user.id)
         .single();
 
@@ -31,6 +32,7 @@ export default function Account({ session }) {
           setAccessToken(data.access_token);
           setRefreshToken(data.refresh_token);
           setAvatarUrl(data.avatar_url);
+          setChatflowid(data.chatflowid); // Set chatflowid
         }
       }
 
@@ -56,6 +58,7 @@ export default function Account({ session }) {
       access_token,
       refresh_token,
       avatar_url: avatarUrl || avatar_url,  // Use new avatarUrl if provided, otherwise keep the existing one
+      chatflowid, // Include chatflowid in updates
       updated_at: new Date(),
     };
 
@@ -108,6 +111,15 @@ export default function Account({ session }) {
           type="text"
           value={refresh_token || ''}
           onChange={(e) => setRefreshToken(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="chatflowid">Chatflow ID</label> {/* New Chatflow ID field */}
+        <input
+          id="chatflowid"
+          type="text"
+          value={chatflowid || ''}
+          onChange={(e) => setChatflowid(e.target.value)}
         />
       </div>
       <div>
