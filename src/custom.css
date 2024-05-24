@@ -1,0 +1,207 @@
+/* custom.css */
+
+/* Logo */
+.auth-logo {
+    width: 100px; /* Adjust size as needed */
+    margin-bottom: 20px;
+  }
+  
+  /* Global Styles */
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: #1e1e1e; /* Dark background from old CSS */
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Body Background Image */
+  body {
+    background: url('/src/assets/girth_bg.png') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    z-index: 0; /* Ensure it is the base layer */
+  }
+  
+  /* Dark Overlay */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* 70% black overlay */
+    z-index: 1; /* Ensure it is above the background image */
+  }
+  
+  /* Root Element */
+  #root {
+    min-height: 100%;
+    position: relative; /* Ensure proper stacking context */
+    z-index: 2; /* Ensure it is above the overlay */
+  }
+  
+  /* Auth Container */
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: none; /* Remove background color */
+    padding: 0; /* Remove padding */
+    box-shadow: none; /* Remove box shadow */
+    position: relative;
+    z-index: 3; /* Ensure it is above the overlay */
+  }
+  
+  /* Inner Auth Container */
+  .auth-container .auth {
+    background: #111; /* Slightly lighter dark background from old CSS */
+    border-radius: 15px; /* Smooth rounded corners */
+    padding: 40px; /* More padding for a spacious look */
+    box-shadow: 0 0 20px rgba(94, 53, 177, 0.6), 0 0 30px rgba(94, 53, 177, 0.5); /* Purple glow effect from old CSS */
+    max-width: 400px; /* Restricting the width */
+    margin: 20px; /* Center align with margin */
+    border: 1px solid #333; /* Subtle border */
+    text-align: center; /* Center align text within container */
+  }
+  
+  /* Button Styles */
+  .auth button {
+    background: #5e35b1; /* Deep Purple from old CSS */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 10px; /* Smooth rounded corners */
+    padding: 10px 0; /* More padding for a thicker button */
+    width: 100%; /* Full width */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(94, 53, 177, 0.4); /* Glow effect from old CSS */
+    margin-bottom: 20px; /* Add margin to separate button from divider */
+  }
+  
+  .auth button:hover {
+    background: #4c2f9e; /* Slightly darker purple on hover from old CSS */
+    box-shadow: 0 6px 12px rgba(94, 53, 177, 0.6); /* Stronger glow on hover from old CSS */
+  }
+  
+  /* Input Styles */
+  .auth input {
+    background: #333; /* Dark input background from old CSS */
+    color: #ffffff; /* White text color */
+    border: 1px solid #444; /* Slight border */
+    border-radius: 10px; /* Smooth rounded corners */
+    padding: 10px;
+    font-size: 16px;
+    width: calc(100% - 20px); /* Adjust width to fit within container */
+    margin-bottom: 20px; /* Space between inputs */
+    transition: background 0.3s ease, border 0.3s ease;
+    margin-left: auto;
+    margin-right: auto; /* Center align inputs */
+  }
+  
+  .auth input:focus {
+    background: #444;
+    border: 1px solid #5e35b1; /* Deep purple border on focus from old CSS */
+    outline: none;
+  }
+  
+  /* Message Styles */
+  .auth .message {
+    background: #333; /* Dark message background from old CSS */
+    color: #ffffff; /* White text color */
+    border-radius: 10px; /* Smooth rounded corners */
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center; /* Center align text */
+  }
+  
+  /* Links within Message */
+  .auth .message a {
+    color: #5e35b1; /* Deep Purple for links from old CSS */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block; /* Ensure links are on separate lines */
+    margin-top: 5px; /* Add margin for spacing */
+  }
+  
+  .auth .message a:hover {
+    color: #a9a9a9; /* Darker gray on hover from old CSS */
+  }
+  
+  /* Header Styles */
+  .auth h1 {
+    color: #ffffff; /* White for the title */
+    font-size: 36px; /* Increased font size */
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif; /* Custom font */
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px rgba(94, 53, 177, 0.6); /* Text shadow for a glowing effect from old CSS */
+    animation: glow 1.5s infinite alternate;
+  }
+  
+  /* Keyframes for Glowing Animation */
+  @keyframes glow {
+    from {
+      text-shadow: 2px 2px 8px rgba(94, 53, 177, 0.6);
+    }
+    to {
+      text-shadow: 4px 4px 16px rgba(94, 53, 177, 0.9);
+    }
+  }
+  
+  /* Chat Container */
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #101010;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+  }
+  
+  /* Chat Header */
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Chat Content */
+  .chat-content {
+    flex: 1;
+    overflow-y: auto;
+    color: #fff;
+    background-color: #101010;
+  }
+  
+  /* Button */
+  .button {
+    background: #5e35b1; /* Deep Purple from old CSS */
+    color: #ffffff; /* White text color */
+    border: none;
+    border-radius: 10px; /* Smooth rounded corners */
+    padding: 10px 20px; /* Padding for a thicker button */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(94, 53, 177, 0.4); /* Glow effect from old CSS */
+  }
+  
+  .button:hover {
+    background: #4c2f9e; /* Slightly darker purple on hover from old CSS */
+    box-shadow: 0 6px 12px rgba(94, 53, 177, 0.6); /* Stronger glow on hover from old CSS */
+  }
+  

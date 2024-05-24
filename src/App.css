@@ -1,0 +1,17 @@
+/* Add any additional styles you need here */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #101010;
+  color: #fff;
+}
+
+.auth-container .auth {
+  border-radius: 10px;
+  box-shadow: var(--custom-box-shadow);
+  padding: 2rem;
+  background-color: var(--custom-panel-color);
+}
