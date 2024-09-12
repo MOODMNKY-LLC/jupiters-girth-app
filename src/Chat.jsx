@@ -6,7 +6,7 @@ import './custom.css'; // Ensure to import your custom CSS
 import girthLogo from './assets/girth_logo.png'; // Import the bot avatar
 
 const Chat = () => {
-  const [chatflowid, setChatflowid] = useState('c1aa52e8-715d-466c-9c49-5d17ebd0feca'); // Placeholder chatflowid
+  const [chatflowid, setChatflowid] = useState('b6e94afb-3db0-473c-bba7-f42f92dc9577'); // Placeholder chatflowid
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -31,7 +31,7 @@ const Chat = () => {
       <div className="chat-content">
         <FullPageChat
           chatflowid={chatflowid}
-          apiHost="https://girth-flowise.moodmnky.com"
+          apiHost="https://flowise-local.moodmnky.com"
           theme={{
             chatWindow: {
               welcomeMessage: "Welcomme back Guardian! How may I be of assistance?",
